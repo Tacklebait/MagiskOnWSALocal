@@ -1,7 +1,6 @@
 # Influence V2 prompt specification status
 
-No LLM provider integration or prompt module exists in this repository. The
-correct implementation must version prompt templates and typed input/output
-schemas for goal suggestions, arcs, plans, daily chapters, beats,
-consequences, summaries, and content intent. It must retain a schema-valid
-template fallback for local and test environments.
+No paid LLM provider is required for the initial slice. The deterministic
+daily-chapter fallback is schema-valid and idempotent. Future provider adapters
+must version their templates and typed input/output schemas, and never mutate
+state without deterministic validation.

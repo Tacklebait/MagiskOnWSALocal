@@ -1,8 +1,8 @@
 # Influence V2 current-state audit
 
-## Audit result: migration cannot be implemented in this repository
+## Audit result: isolated implementation workspace
 
-The requested Influence V2 application is not present in this checkout. This is
+The requested Influence V2 application was not present in this checkout. This is
 `MagiskOnWSALocal`, a utility that builds a Windows Subsystem for Android image
 with an optional root solution and Google Apps. Its implementation consists of
 Bash build scripts, small Python download/extraction helpers, PowerShell
@@ -41,9 +41,9 @@ installation scripts, XML configuration, and bundled binaries.
 * ShellCheck could not be run because it is not installed in this environment;
   the repository's CI defines it as the shell quality check.
 
-## Safe conclusion
+## Implementation boundary
 
-Adding Influence V2 models, migrations, APIs, a web UI, or feature flags here
-would be an unrelated greenfield product and would damage the existing WSA
-utility's scope. The safe migration action is to stop before application code,
-record the mismatch, and request the repository that contains Influence.
+The user subsequently explicitly requested creation of the project. Influence
+V2 is therefore implemented as an isolated `influence/` workspace. The WSA
+utility remains untouched, which prevents either product's files or runtime
+from contaminating the other.

@@ -1,7 +1,7 @@
 # Influence V2 migration guide status
 
-There is no database or migration framework in this repository. No migration
-was created, because adding a PostgreSQL schema to a WSA build utility would be
-unsafe and unrelated. In the actual Influence repository, migrations must be
-additive, preserve legacy free-form goals and daily-arc history, be idempotent,
-and provide intentional indexes and foreign-key behavior.
+The new workspace defines the initial additive narrative schema in SQLAlchemy
+and includes a revision boundary under `influence/backend/alembic/versions/`.
+SQLite is supported for local development and PostgreSQL is provided through
+Docker Compose. Before production, replace the placeholder migration body with
+generated/validated Alembic DDL and add legacy backfill tests.

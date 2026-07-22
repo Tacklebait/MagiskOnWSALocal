@@ -1,17 +1,14 @@
 # Influence V2 migration plan
 
-## Decision
+## Decision and delivery boundary
 
-Do not implement Influence V2 in `MagiskOnWSALocal`. The audited codebase has
-none of the prerequisite application or data systems. Creating them here would
-violate the requirement to evolve an existing application incrementally rather
-than build a greenfield prototype.
+Create Influence V2 in the isolated `influence/` workspace after the user
+explicitly requested a new project. The legacy WSA utility stays unchanged.
 
 ## Required input to continue
 
-Provide the checkout containing the Influence FastAPI backend, Next.js
-frontend, PostgreSQL migrations, and existing simulation/domain systems. Once
-available, use this sequence:
+The implementation starts from a new bounded foundation. Its next increments
+are:
 
 1. Re-run the audit against actual backend, frontend, data, and runtime flows.
 2. Add additive goal, narrative arc, beat, plan, and consequence persistence.
@@ -24,5 +21,4 @@ available, use this sequence:
 ## Preservation rule
 
 No WSA build, download, installer, or configuration file is a valid target for
-Influence domain changes. This documentation-only change preserves all current
-runtime behavior.
+Influence domain changes. All new runtime files live below `influence/`.

@@ -1,7 +1,7 @@
 # Influence V2 operator guide status
 
-This repository's operator workflow is the interactive WSA build flow described
-in `docs/README.md`; it has no character or narrative administration surface.
-The correct Influence application should document goal/arc review, locks,
-generation/regeneration, consequence failures, runtime flags, and recovery
-without exposing secrets or internal prompts to spectators.
+Run `docker compose -f influence/docker-compose.yml up --build`, then open the
+API docs at `http://localhost:8000/docs`. Create a character, create and
+activate a goal, create and activate an arc, then generate a daily chapter.
+The Next.js page at `http://localhost:3000` is a minimal character-first
+spectator entry point. Runtime flags are listed in `influence/.env.example`.

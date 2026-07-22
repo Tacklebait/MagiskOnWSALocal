@@ -2,8 +2,10 @@
 
 ## Status
 
-This is a target-model record, not an implementation in this repository. No
-existing persistence layer exists here to host these entities safely.
+The initial implementation persists Character, Goal, GoalProgressEntry,
+NarrativeArc, and NarrativeBeat in `influence/backend/app/models.py`. The
+remaining event, post, memory, relationship, plan, and consequence records are
+the next additive vertical slices.
 
 ## Required ownership model for the correct repository
 

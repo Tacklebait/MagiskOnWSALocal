@@ -2,19 +2,19 @@
 
 ## Result
 
-Influence V2 was **not implemented** because the supplied repository is
-`MagiskOnWSALocal`, not the described Influence application. This is a
-repository mismatch rather than an implementation failure.
+The first runnable Influence V2 vertical slice is implemented in an isolated
+`influence/` workspace after an explicit user request to create the project.
 
 ## Changes made
 
-Added the required V2 documentation set to record the audit, safe migration
-decision, target architecture, and deferred implementation/test requirements.
-No product code, build scripts, installer assets, or runtime behavior changed.
+Added a FastAPI backend, PostgreSQL Docker Compose runtime, Next.js spectator
+entry point, typed narrative-domain models, state-transition services,
+idempotent daily chapter fallback, and API tests. Existing WSA build scripts,
+installer assets, and runtime behavior remain unchanged.
 
 ## Known limitation and handoff
 
-All requested application functionality remains unimplemented until the
-repository containing the FastAPI/Next.js/PostgreSQL Influence product is
-provided. Reuse the documentation's repository gate before beginning the
-specified vertical slices.
+Events, posts, memories, relationships, image providers, simulation execution,
+admin UI, provider prompts, and production Alembic migration execution remain
+future vertical slices. They are deliberately not represented by fake or
+unvalidated behavior.

@@ -1,7 +1,7 @@
 # Influence V2 narrative engine
 
-No narrative engine exists in this WSA build utility. In the intended product,
-planning must be separate from execution; LLMs may propose typed plans and
-consequences, while deterministic services validate and apply only supported
-changes. This design cannot be attached to the current repository without
-introducing an unrelated application.
+The initial narrative engine is a deterministic fallback planner in
+`influence/backend/app/services.py`. It keeps planning separate from execution
+and creates one schema-valid scheduled beat per active arc/date, idempotently.
+LLM providers, consequence proposals, and simulation execution are intentionally
+deferred until their typed boundaries are added.
